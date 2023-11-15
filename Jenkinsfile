@@ -2,14 +2,14 @@ pipeline {
     agent any
  
     stages {
-        stage ('git clone') {
+      /*  stage ('git clone') {
             steps {
                 echo "=============clone=============="
                 
                    sh 'git clone https://github.com/kwopik/build_1.git'
                 
             }
-        }
+        } */
         
         stage('Build Docker Image') {
             steps {
