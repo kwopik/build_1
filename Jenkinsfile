@@ -24,6 +24,7 @@ pipeline {
             }
          stage('Run Docker Container') {
             steps {
+                echo "=============run=============="
                 script {
                     // Запуск Docker-контейнера
                     docker.run('simple-flask-app', '-p 5000:5000')
