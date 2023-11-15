@@ -24,7 +24,7 @@ pipeline {
           stage ('docker test') {
             steps {
                 echo "=============test=============="
-                script{
+                script {
                    def curlResult = sh(script: 'curl -I http://127.0.0.1:5000', returnStatus: true)
                     echo "curl Result: ${curlResult}"
                 }
