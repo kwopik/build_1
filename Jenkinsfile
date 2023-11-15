@@ -5,9 +5,9 @@ pipeline {
         stage ('git clone') {
             steps {
                 echo "=============clone=============="
-                script {
+                
                     git clone 'https://github.com/kwopik/build_1.git'
-                }
+                
             }
         }
         
