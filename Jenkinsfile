@@ -25,7 +25,8 @@ pipeline {
             steps {
                 echo "=============test=============="
                 
-                   sh 'curl http://127.0.0.1:5000/'
+                   def curlResult = sh(script: 'curl -I http://127.0.0.1:5000', returnStatus: true)
+                    echo "curl Result: ${curlResult}"
                 
             }
         }
