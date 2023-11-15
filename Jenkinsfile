@@ -5,7 +5,7 @@ pipeline {
         stage ('git clone') {
             steps {
                 script {
-                    git clone https://github.com/kwopik/build_1.git
+                    git clone 'https://github.com/kwopik/build_1.git'
                 }
             }
         }
