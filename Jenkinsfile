@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo "=============clone=============="
                 
-                    git clone 'https://github.com/kwopik/build_1.git'
+                   sh 'git clone https://github.com/kwopik/build_1.git'
                 
             }
         }
