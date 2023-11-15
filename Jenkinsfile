@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo "=============run=============="
                 
-                   sh 'docker run -d -p 5000:5000 simple-flask-app '
+                   sh 'docker run -d --name flasktest -p 5000:5000 simple-flask-app '
                 
             }
         }
@@ -27,7 +27,14 @@ pipeline {
                 script {
                    def curlResult = sh(script: 'curl -I http://127.0.0.1:5000', returnStatus: true)
                     echo "curl Result: ${curlResult}"
+                echo "!!!!!!!!!!!!!success!!!!!!!!!!!!!!!!"
                 }
+            }
+        }
+                 stage ('docker kill') {
+            steps {
+                echo "=============kill=============="
+                sh 'docker kill flasktest'
             }
         }
     }
