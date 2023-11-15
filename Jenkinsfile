@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo "=============build=============="
                 
-                   sh 'docker build .'
+                   sh 'docker build -t simple-flask-app:latest .'
                 
             }
         }   
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo "=============run=============="
                 
-                   sh 'docker run -d -p 5000:5000 -t simple-flask-app:latest'
+                   sh 'docker run -d -p 5000:5000 simple-flask-app '
                 
             }
         }
