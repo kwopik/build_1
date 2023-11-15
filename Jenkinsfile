@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage ('git clone') {
             steps {
+                echo "=============clone=============="
                 script {
                     git clone 'https://github.com/kwopik/build_1.git'
                 }
@@ -12,6 +13,7 @@ pipeline {
         
         stage('Build Docker Image') {
             steps {
+                echo "=============build================"
                 script {
                     // Сборка Docker-образа
                     dockerImage = docker.build('simple-flask-app', '.')
