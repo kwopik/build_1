@@ -16,15 +16,11 @@ pipeline {
                     // Сборка Docker-образа
                     dockerImage = docker.build('simple-flask-app', '.')
 
-                    // Сохранение Docker-образа в Docker Hub (опционально)
-                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials-id') {
-                        dockerImage.push()
+                   
                     }
                 }
             }
-        }
-
-        stage('Run Docker Container') {
+         stage('Run Docker Container') {
             steps {
                 script {
                     // Запуск Docker-контейнера
